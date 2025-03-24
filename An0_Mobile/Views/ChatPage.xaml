@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="An0_Mobile.Views.ChatPage"
+             Title="{Binding Title}">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Header with Room Info and Video Call Button -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" BackgroundColor="#512BD4" Padding="20,10">
+            <VerticalStackLayout Grid.Column="0">
+                <Label Text="AN0 Secure Chat" TextColor="White" FontSize="16" FontAttributes="Bold" />
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Connection ID:" TextColor="White" FontSize="12" />
+                    <Label Text="{Binding ConnectionId}" TextColor="White" FontSize="12" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="10" IsVisible="{Binding InviteCode, Converter={StaticResource StringNotNullOrEmptyConverter}}">
+                    <Label Text="Invite Code:" TextColor="White" FontSize="12" />
+                    <Label Text="{Binding InviteCode}" TextColor="White" FontSize="12" />
+                    <Button Text="Copy" Command="{Binding CopyInviteCodeCommand}" HeightRequest="25" CornerRadius="5"
+                            BackgroundColor="DarkBlue" TextColor="White" FontSize="10" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            
+            <Button Grid.Column="1" Text="Video Call" Command="{Binding StartVideoCallCommand}" 
+                    BackgroundColor="DarkBlue" TextColor="White" VerticalOptions="Center"
+                    IsVisible="{Binding IsInCall, Converter={StaticResource InverseBoolConverter}}" />
+            
+            <Button Grid.Column="1" Text="End Call" Command="{Binding EndCallCommand}" 
+                    BackgroundColor="Red" TextColor="White" VerticalOptions="Center"
+                    IsVisible="{Binding IsInCall}" />
+        </Grid>
+
+        <!-- Main Content Area -->
+        <Grid Grid.Row="1" RowDefinitions="*,Auto" ColumnDefinitions="*,Auto" BackgroundColor="#F5F5F5">
+            <!-- Chat Messages Area -->
+            <CollectionView Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Messages}" Margin="10"
+                            BackgroundColor="White" VerticalOptions="Fill">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10,5" ColumnDefinitions="Auto,*">
+                            <!-- System Message -->
+                            <Frame Grid.ColumnSpan="2" BackgroundColor="LightGray" Padding="10" CornerRadius="10" Margin="5,2"
+                                   IsVisible="{Binding IsSystemMessage}">
+                                <Label Text="{Binding Content}" TextColor="{Binding IsError, Converter={StaticResource BoolToErrorColorConverter}}" />
+                            </Frame>
+                            
+                            <!-- User Message (Left) -->
+                            <StackLayout Grid.Column="0" HorizontalOptions="Start" 
+                                         IsVisible="{Binding IsCurrentUser, Converter={StaticResource InverseBoolConverter}}">
+                                <Frame BackgroundColor="LightBlue" Padding="10" CornerRadius="10" HasShadow="True"
+                                       IsVisible="{Binding IsSystemMessage, Converter={StaticResource InverseBoolConverter}}">
+                                    <StackLayout Spacing="5">
+                                        <Label Text="{Binding Sender}" FontSize="11" TextColor="Navy" FontAttributes="Bold" />
+                                        <Label Text="{Binding Content}" TextColor="Black" />
+                                        <Button Text="Download" Command="{Binding DownloadCommand}" HeightRequest="30" 
+                                                BackgroundColor="Navy" TextColor="White" CornerRadius="5"
+                                                IsVisible="{Binding IsFileMessage}" />
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            
+                            <!-- User Message (Right/Current User) -->
+                            <StackLayout Grid.Column="1" HorizontalOptions="End" 
+                                         IsVisible="{Binding IsCurrentUser}">
+                                <Frame BackgroundColor="#DCF8C6" Padding="10" CornerRadius="10" HasShadow="True"
+                                       IsVisible="{Binding IsSystemMessage, Converter={StaticResource InverseBoolConverter}}">
+                                    <StackLayout Spacing="5">
+                                        <Label Text="You" FontSize="11" TextColor="DarkGreen" FontAttributes="Bold" />
+                                        <Label Text="{Binding Content}" TextColor="Black" />
+                                        <Button Text="Download" Command="{Binding DownloadCommand}" HeightRequest="30"
+                                                BackgroundColor="Green" TextColor="White" CornerRadius="5"
+                                                IsVisible="{Binding IsFileMessage}" />
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            <!-- Video Call Area (when active) -->
+            <Grid Grid.Row="0" Grid.Column="0" IsVisible="{Binding IsInCall}" BackgroundColor="Black">
+                <Image Source="{Binding RemoteVideoStream}" Aspect="AspectFill" />
+                <Grid HorizontalOptions="End" VerticalOptions="Start" WidthRequest="100" HeightRequest="150" Margin="10">
+                    <Image Source="{Binding LocalVideoStream}" Aspect="AspectFill" />
+                </Grid>
+            </Grid>
+            
+            <!-- Incoming Call Alert -->
+            <Frame Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"
+                   BackgroundColor="White" BorderColor="Gray" Padding="20" CornerRadius="10" HasShadow="True"
+                   IsVisible="{Binding IsCallIncoming}">
+                <StackLayout Spacing="15">
+                    <Label Text="Incoming Video Call" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="{Binding CallerName, StringFormat='from {0}'}" FontSize="16" HorizontalOptions="Center" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                        <Button Text="Accept" Command="{Binding AcceptCallCommand}" 
+                                BackgroundColor="Green" TextColor="White" WidthRequest="100" />
+                        <Button Text="Reject" Command="{Binding RejectCallCommand}" 
+                                BackgroundColor="Red" TextColor="White" WidthRequest="100" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            
+            <!-- Image Processing Settings -->
+            <Grid Grid.Row="0" Grid.Column="1" WidthRequest="200" BackgroundColor="#EEEEEE" Padding="10"
+                  IsVisible="{Binding IsInCall}">
+                <ScrollView>
+                    <StackLayout Spacing="10">
+                        <Label Text="Video Settings" FontSize="16" FontAttributes="Bold" />
+                        
+                        <Label Text="Filters" FontAttributes="Bold" />
+                        <Picker Title="Select Filter" SelectedItem="{Binding ImageProcessingSettings.ActiveFilter}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>none</x:String>
+                                    <x:String>grayscale</x:String>
+                                    <x:String>sepia</x:String>
+                                    <x:String>blur</x:String>
+                                    <x:String>edge-detection</x:String>
+                                    <x:String>invert</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                        
+                        <Label Text="Features" FontAttributes="Bold" />
+                        <CheckBox IsChecked="{Binding ImageProcessingSettings.FaceDetection}" />
+                        <Label Text="Face Detection" VerticalOptions="Center" />
+                        
+                        <CheckBox IsChecked="{Binding ImageProcessingSettings.ObjectDetection}" />
+                        <Label Text="Object Detection" VerticalOptions="Center" />
+                        
+                        <CheckBox IsChecked="{Binding ImageProcessingSettings.BackgroundRemoval}" />
+                        <Label Text="Background Removal" VerticalOptions="Center" />
+                        
+                        <Label Text="Brightness" FontAttributes="Bold" />
+                        <Slider Minimum="-100" Maximum="100" Value="{Binding ImageProcessingSettings.Brightness}" />
+                        
+                        <Label Text="Contrast" FontAttributes="Bold" />
+                        <Slider Minimum="-100" Maximum="100" Value="{Binding ImageProcessingSettings.Contrast}" />
+                        
+                        <Button Text="Apply Settings" Command="{Binding UpdateImageProcessingSettingsCommand}" 
+                                BackgroundColor="#512BD4" TextColor="White" />
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+        </Grid>
+
+        <!-- Message Input Area -->
+        <Grid Grid.Row="2" ColumnDefinitions="Auto,*,Auto,Auto" BackgroundColor="White" Padding="10">
+            <Button Grid.Column="0" Text="📎" FontSize="20" Command="{Binding SendFileCommand}" 
+                    WidthRequest="50" HeightRequest="50" CornerRadius="25" 
+                    BackgroundColor="Transparent" TextColor="#512BD4" />
+            
+            <Entry Grid.Column="1" Text="{Binding NewMessage}" Placeholder="Type a message..." 
+                   VerticalOptions="Center" />
+            
+            <Button Grid.Column="2" Text="📤" FontSize="20" Command="{Binding SendMessageCommand}" 
+                    WidthRequest="50" HeightRequest="50" CornerRadius="25" 
+                    BackgroundColor="#512BD4" TextColor="White" />
+        </Grid>
+    </Grid>
+</ContentPage> 

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:An0_Mobile.Converters"
+             x:Class="An0_Mobile.Views.ConnectPage"
+             Title="{Binding Title}">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:StringNotNullOrEmptyConverter x:Key="StringNotNullOrEmptyConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <Grid RowDefinitions="Auto,*,Auto" ColumnDefinitions="*,*" Padding="20">
+        <Label Grid.Row="0" Grid.ColumnSpan="2" 
+               Text="AN0 SECURE CHAT" 
+               FontSize="24" 
+               HorizontalOptions="Center" 
+               FontAttributes="Bold"
+               Margin="0,20,0,30" />
+        
+        <VerticalStackLayout Grid.Row="1" Grid.ColumnSpan="2" Spacing="15">
+            
+            <!-- Connection ID -->
+            <Frame BorderColor="LightGray" Padding="10" CornerRadius="5">
+                <StackLayout>
+                    <Label Text="Connection ID" FontAttributes="Bold" />
+                    <Entry Text="{Binding ConnectionId}" IsReadOnly="True" />
+                </StackLayout>
+            </Frame>
+            
+            <!-- Test Connection Button -->
+            <Button Text="Test Connection to Server" 
+                    Command="{Binding TestConnectionCommand}"
+                    BackgroundColor="Orange" 
+                    TextColor="White"
+                    Margin="0,0,0,10" />
+            
+            <!-- Create Room Section -->
+            <Frame BorderColor="LightGray" Padding="10" CornerRadius="5">
+                <StackLayout Spacing="10">
+                    <Label Text="Create a New Room" FontAttributes="Bold" FontSize="16" />
+                    <Label Text="Generate a strong password or enter your own:" />
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Entry Grid.Column="0" Text="{Binding SharedPassword}" Placeholder="Password" />
+                        <Button Grid.Column="1" Text="Generate" Command="{Binding GeneratePasswordCommand}" />
+                    </Grid>
+                    <Button Text="Create Room" Command="{Binding CreateRoomCommand}" 
+                            BackgroundColor="#512BD4" TextColor="White" />
+                </StackLayout>
+            </Frame>
+            
+            <!-- Join Room Section -->
+            <Frame BorderColor="LightGray" Padding="10" CornerRadius="5">
+                <StackLayout Spacing="10">
+                    <Label Text="Join Existing Room" FontAttributes="Bold" FontSize="16" />
+                    <Label Text="Enter the shared password to join:" />
+                    <Entry Text="{Binding SharedPassword}" Placeholder="Shared Password" />
+                    <Button Text="Join Room" Command="{Binding JoinRoomCommand}" 
+                            BackgroundColor="#512BD4" TextColor="White" />
+                </StackLayout>
+            </Frame>
+            
+            <!-- Join with Invite Code Section -->
+            <Frame BorderColor="LightGray" Padding="10" CornerRadius="5">
+                <StackLayout Spacing="10">
+                    <Label Text="Join with Invite Code" FontAttributes="Bold" FontSize="16" />
+                    <Label Text="Enter the invite code:" />
+                    <Entry Text="{Binding InviteCode}" Placeholder="Invite Code" />
+                    <Button Text="Join with Invite Code" Command="{Binding JoinWithInviteCodeCommand}" 
+                            BackgroundColor="#512BD4" TextColor="White" />
+                </StackLayout>
+            </Frame>
+            
+            <!-- Error Messages -->
+            <Label Text="{Binding ErrorMessage}" TextColor="Red" 
+                   IsVisible="{Binding ErrorMessage, Converter={StaticResource StringNotNullOrEmptyConverter}}" />
+            
+            <!-- Busy Indicator -->
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            
+        </VerticalStackLayout>
+        
+        <Label Grid.Row="2" Grid.ColumnSpan="2" 
+               Text="End-to-end Encrypted Secure Chat" 
+               FontSize="12" 
+               TextColor="Gray"
+               HorizontalOptions="Center"
+               Margin="0,20,0,0" />
+    </Grid>
+</ContentPage> 

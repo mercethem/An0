@@ -1,0 +1,163 @@
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\appsettings.json
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\An0.staticwebassets.runtime.json
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\An0.staticwebassets.endpoints.json
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\An0.exe
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\An0.deps.json
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\An0.runtimeconfig.json
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\An0.dll
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\An0.pdb
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\merce\Desktop\Whatsapp_V.1.06\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\An0.csproj.AssemblyReference.cache
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\An0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\An0.AssemblyInfoInputs.cache
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\An0.AssemblyInfo.cs
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\An0.csproj.CoreCompileInputs.cache
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\An0.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\An0.RazorAssemblyInfo.cache
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\An0.RazorAssemblyInfo.cs
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\scopedcss\bundle\An0.styles.css
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\scopedcss\projectbundle\An0.bundle.scp.css
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\staticwebassets\msbuild.An0.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\staticwebassets\msbuild.An0.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\staticwebassets\msbuild.build.An0.props
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.An0.props
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.An0.props
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\An0.csproj.Up2Date
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\An0.dll
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\refint\An0.dll
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\An0.pdb
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\An0.genruntimeconfig.cache
+C:\Users\merce\Desktop\Whatsapp_V.1.06\obj\Debug\net8.0\ref\An0.dll
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\appsettings.json
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\An0.staticwebassets.runtime.json
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\An0.staticwebassets.endpoints.json
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\An0.exe
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\An0.deps.json
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\An0.runtimeconfig.json
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\An0.dll
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\An0.pdb
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\An0.csproj.AssemblyReference.cache
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\An0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\An0.AssemblyInfoInputs.cache
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\An0.AssemblyInfo.cs
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\An0.csproj.CoreCompileInputs.cache
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\An0.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\An0.RazorAssemblyInfo.cache
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\An0.RazorAssemblyInfo.cs
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\scopedcss\bundle\An0.styles.css
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\scopedcss\projectbundle\An0.bundle.scp.css
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\staticwebassets\msbuild.An0.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\staticwebassets\msbuild.An0.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\staticwebassets\msbuild.build.An0.props
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.An0.props
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.An0.props
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\An0.csproj.Up2Date
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\An0.dll
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\refint\An0.dll
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\An0.pdb
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\An0.genruntimeconfig.cache
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\ref\An0.dll
+C:\Users\merce\Desktop\Görüntü İşleme Apisi\An0\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\appsettings.json
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\An0.staticwebassets.endpoints.json
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\An0.staticwebassets.runtime.json
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\An0.exe
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\An0.deps.json
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\An0.runtimeconfig.json
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\An0.dll
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\An0.pdb
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\merce\Desktop\An0 v.1.1.4\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\An0.csproj.AssemblyReference.cache
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\An0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\An0.AssemblyInfoInputs.cache
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\An0.AssemblyInfo.cs
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\An0.csproj.CoreCompileInputs.cache
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\An0.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\An0.RazorAssemblyInfo.cache
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\An0.RazorAssemblyInfo.cs
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\scopedcss\bundle\An0.styles.css
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\scopedcss\projectbundle\An0.bundle.scp.css
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\staticwebassets\msbuild.An0.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\staticwebassets\msbuild.An0.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\staticwebassets\msbuild.build.An0.props
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.An0.props
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.An0.props
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\An0.csproj.Up2Date
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\An0.dll
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\refint\An0.dll
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\An0.pdb
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\An0.genruntimeconfig.cache
+C:\Users\merce\Desktop\An0 v.1.1.4\obj\Debug\net8.0\ref\An0.dll
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\An0.csproj.AssemblyReference.cache
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\An0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\An0.AssemblyInfoInputs.cache
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\An0.AssemblyInfo.cs
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\An0.csproj.CoreCompileInputs.cache
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\An0.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\An0.RazorAssemblyInfo.cache
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\An0.RazorAssemblyInfo.cs
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\appsettings.json
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\An0.staticwebassets.runtime.json
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\An0.staticwebassets.endpoints.json
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\An0.exe
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\An0.deps.json
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\An0.runtimeconfig.json
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\An0.dll
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\An0.pdb
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\merce\Desktop\An0\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\scopedcss\bundle\An0.styles.css
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\scopedcss\projectbundle\An0.bundle.scp.css
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\staticwebassets\msbuild.An0.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\staticwebassets\msbuild.An0.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\staticwebassets\msbuild.build.An0.props
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.An0.props
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.An0.props
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\An0.csproj.Up2Date
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\An0.dll
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\refint\An0.dll
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\An0.pdb
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\An0.genruntimeconfig.cache
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\ref\An0.dll
+C:\Users\merce\Desktop\An0\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

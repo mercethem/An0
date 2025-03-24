@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Secure E2E Chat";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="display-4">End-to-End Encrypted Chat</h1>
+            <p class="lead">Communicate securely with end-to-end encryption</p>
+            <hr />
+            <div class="mt-4">
+                <a asp-action="Connect" class="btn btn-primary btn-lg">Start Chatting</a>
+            </div>
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h3>How It Works</h3>
+                </div>
+                <div class="card-body text-start">
+                    <ol>
+                        <li>Both parties need to enter the same shared password.</li>
+                        <li>One user enters the IP address of the other user.</li>
+                        <li>Messages are encrypted using AES before being sent over the network.</li>
+                        <li>Only people with the correct password can decrypt and read the messages.</li>
+                        <li>Messages are not stored on any server - they exist only during the active session.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

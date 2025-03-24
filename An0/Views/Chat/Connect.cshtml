@@ -1,0 +1,106 @@
+@model An0.Models.ChatViewModel
+
+@{
+    ViewData["Title"] = "Connect to Chat";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Secure Chat Connection</h3>
+                    <ul class="nav nav-tabs card-header-tabs mt-3" id="connectionTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="create-tab" data-bs-toggle="tab" data-bs-target="#create" type="button" role="tab" aria-controls="create" aria-selected="true">Create Room</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="join-tab" data-bs-toggle="tab" data-bs-target="#join" type="button" role="tab" aria-controls="join" aria-selected="false">Join with Invite Code</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="manual-tab" data-bs-toggle="tab" data-bs-target="#manual" type="button" role="tab" aria-controls="manual" aria-selected="false">Manual Connection</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="connectionTabsContent">
+                        <!-- Create Room Tab -->
+                        <div class="tab-pane fade show active" id="create" role="tabpanel" aria-labelledby="create-tab">
+                            <form id="createRoomForm">
+                                <div class="form-group mb-3">
+                                    <label for="createPassword" class="form-label">Room Password</label>
+                                    <input id="createPassword" type="password" class="form-control" placeholder="Enter a password for your room" required />
+                                    <small class="form-text text-muted">This password will be used to encrypt all messages in the room.</small>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg">Create Room</button>
+                                </div>
+                            </form>
+                            
+                            <!-- Invite Code Display (Hidden by default) -->
+                            <div id="inviteCodeSection" class="mt-4 d-none">
+                                <div class="alert alert-success">
+                                    <h5>Room Created Successfully!</h5>
+                                    <p>Share this invite code with others to join your room:</p>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="text" id="inviteCodeDisplay" class="form-control" readonly />
+                                    <button class="btn btn-outline-secondary" type="button" id="copyInviteCodeBtn">
+                                        <i class="bi bi-clipboard"></i> Copy
+                                    </button>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button type="button" class="btn btn-success" id="enterRoomBtn">Enter Room</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Join with Invite Code Tab -->
+                        <div class="tab-pane fade" id="join" role="tabpanel" aria-labelledby="join-tab">
+                            <form id="joinWithCodeForm">
+                                <div class="form-group mb-3">
+                                    <label for="inviteCode" class="form-label">Invite Code</label>
+                                    <input id="inviteCode" type="text" class="form-control" placeholder="Enter the invite code you received" required />
+                                    <small class="form-text text-muted">Paste the invite code shared with you.</small>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg">Join Room</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Manual Connection Tab -->
+                        <div class="tab-pane fade" id="manual" role="tabpanel" aria-labelledby="manual-tab">
+                            <form asp-action="Connect" method="post">
+                                <div class="form-group mb-3">
+                                    <label asp-for="ConnectionId" class="form-label">Connection ID</label>
+                                    <input asp-for="ConnectionId" class="form-control" placeholder="Enter a unique connection identifier" required />
+                                    <span asp-validation-for="ConnectionId" class="text-danger"></span>
+                                    <small class="form-text text-muted">Enter any unique identifier to connect. No need to use actual IP addresses.</small>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label asp-for="SharedPassword" class="form-label">Shared Password</label>
+                                    <input asp-for="SharedPassword" type="password" class="form-control" placeholder="Enter the shared password" required />
+                                    <small class="form-text text-muted">Both parties must use the same password to decrypt messages.</small>
+                                    <span asp-validation-for="SharedPassword" class="text-danger"></span>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg">Connect</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@microsoft/signalr@latest/dist/browser/signalr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="~/js/connect.js"></script>
+} 
