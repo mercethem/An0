@@ -1,0 +1,42 @@
+@model An0.Models.ChatViewModel
+
+@{
+    ViewData["Title"] = "Sohbete Bağlan";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Güvenli Sohbet Bağlantısı</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Connect" method="post">
+                        <div class="mb-3">
+                            <label asp-for="ConnectionId" class="form-label">Kullanıcı Adınız</label>
+                            <input asp-for="ConnectionId" class="form-control" placeholder="Kullanıcı adı girin" required />
+                            <span asp-validation-for="ConnectionId" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="SharedPassword" class="form-label">Paylaşılan Şifre</label>
+                            <input asp-for="SharedPassword" type="password" class="form-control" placeholder="Şifre girin" required />
+                            <div class="form-text">Bu şifre mesajların şifrelenmesi için kullanılacaktır. Her iki taraf da aynı şifreyi kullanmalıdır.</div>
+                            <span asp-validation-for="SharedPassword" class="text-danger"></span>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg mt-3">Sohbete Bağlan</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-action="Index" class="btn btn-outline-secondary">Geri Dön</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+} 

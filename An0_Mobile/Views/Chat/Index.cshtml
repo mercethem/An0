@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Güvenli Sohbet";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="display-4">Güvenli E2E Sohbet</h1>
+            <p class="lead">Uçtan uca şifreleme ile güvenli iletişim</p>
+            <hr />
+            <div class="mt-4">
+                <a asp-action="Connect" class="btn btn-primary btn-lg">Sohbete Başla</a>
+            </div>
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h3>Nasıl Çalışır?</h3>
+                </div>
+                <div class="card-body text-start">
+                    <ol>
+                        <li>İki taraf da aynı paylaşılan şifreyi girmelidir.</li>
+                        <li>Bir kullanıcı diğer kullanıcının IP adresini girer.</li>
+                        <li>Mesajlar ağ üzerinden gönderilmeden önce AES ile şifrelenir.</li>
+                        <li>Sadece doğru şifreye sahip kişiler mesajları deşifre edebilir ve okuyabilir.</li>
+                        <li>Mesajlar hiçbir sunucuda depolanmaz - sadece aktif oturum sırasında vardır.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

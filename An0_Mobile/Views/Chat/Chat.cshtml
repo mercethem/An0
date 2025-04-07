@@ -1,0 +1,199 @@
+@{
+    ViewData["Title"] = "Sohbet";
+    string connectionId = ViewBag.ConnectionId;
+    string sharedPassword = ViewBag.SharedPassword;
+}
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5>Güvenli Sohbet</h5>
+                        <span class="badge bg-success" id="connectionStatus">Bağlantı Kuruluyor...</span>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <div id="chatMessages" class="p-3" style="height: 400px; overflow-y: auto;">
+                        <div class="text-center my-3">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Yükleniyor...</span>
+                            </div>
+                            <p class="mt-2">Sohbet başlatılıyor...</p>
+                        </div>
+                    </div>
+                    <div class="p-3 border-top">
+                        <div class="input-group">
+                            <input type="text" id="messageInput" class="form-control" placeholder="Mesajınızı yazın..." disabled>
+                            <button class="btn btn-primary" type="button" id="sendButton" disabled>
+                                <i class="bi bi-send"></i> Gönder
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small>Kullanıcı: <strong id="userConnection">@connectionId</strong></small>
+                        <a asp-action="Index" class="btn btn-sm btn-outline-secondary">Çıkış</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script>
+        // SignalR bağlantısı
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/chathub")
+            .withAutomaticReconnect()
+            .build();
+        
+        // Kullanıcı bilgileri
+        const connectionId = "@connectionId";
+        const sharedPassword = "@sharedPassword";
+        let roomName = "DefaultRoom"; // Basit bir oda adı
+        
+        // DOM elementleri
+        const chatMessages = document.getElementById("chatMessages");
+        const messageInput = document.getElementById("messageInput");
+        const sendButton = document.getElementById("sendButton");
+        const connectionStatus = document.getElementById("connectionStatus");
+        
+        // Mesaj gönderme fonksiyonu
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                // SignalR üzerinden mesaj gönder
+                connection.invoke("SendMessage", message, connectionId)
+                    .catch(err => {
+                        console.error(err);
+                        appendSystemMessage("Mesaj gönderilemedi: " + err);
+                    });
+                messageInput.value = "";
+            }
+        }
+        
+        // Sistem mesajı ekle
+        function appendSystemMessage(message) {
+            const div = document.createElement("div");
+            div.className = "alert alert-info my-2";
+            div.textContent = message;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // Mesaj ekle
+        function appendMessage(message, sender, time, isCurrentUser) {
+            const div = document.createElement("div");
+            div.className = `d-flex my-2 ${isCurrentUser ? 'justify-content-end' : 'justify-content-start'}`;
+            
+            const msgDiv = document.createElement("div");
+            msgDiv.className = `card ${isCurrentUser ? 'bg-primary text-white' : 'bg-light'}`;
+            msgDiv.style.maxWidth = "75%";
+            
+            const msgBody = document.createElement("div");
+            msgBody.className = "card-body py-2 px-3";
+            
+            const msgText = document.createElement("p");
+            msgText.className = "card-text mb-0";
+            msgText.textContent = message;
+            
+            const msgInfo = document.createElement("small");
+            msgInfo.className = `d-block mt-1 ${isCurrentUser ? 'text-white-50' : 'text-muted'}`;
+            msgInfo.textContent = `${sender} · ${time}`;
+            
+            msgBody.appendChild(msgText);
+            msgBody.appendChild(msgInfo);
+            msgDiv.appendChild(msgBody);
+            div.appendChild(msgDiv);
+            
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // SignalR olaylarını dinle
+        connection.on("ReceiveMessage", (message, sender, time) => {
+            appendMessage(message, sender, time, sender === connectionId);
+        });
+        
+        connection.on("ReceiveSystemMessage", (message) => {
+            appendSystemMessage(message);
+        });
+        
+        connection.on("JoinedRoom", (message) => {
+            appendSystemMessage(message);
+            messageInput.disabled = false;
+            sendButton.disabled = false;
+        });
+        
+        // SignalR bağlantısını başlat
+        connection.start()
+            .then(() => {
+                connectionStatus.textContent = "Bağlandı";
+                connectionStatus.classList.remove("bg-danger");
+                connectionStatus.classList.add("bg-success");
+                
+                // Odaya katıl
+                return connection.invoke("JoinRoom", roomName, connectionId);
+            })
+            .catch(err => {
+                console.error(err);
+                connectionStatus.textContent = "Bağlantı Hatası";
+                connectionStatus.classList.remove("bg-success");
+                connectionStatus.classList.add("bg-danger");
+                appendSystemMessage("Bağlantı kurulamadı: " + err);
+            });
+            
+        // Bağlantı durumu değişikliklerini dinle
+        connection.onreconnecting(() => {
+            connectionStatus.textContent = "Yeniden Bağlanıyor...";
+            connectionStatus.classList.remove("bg-success");
+            connectionStatus.classList.add("bg-warning");
+            messageInput.disabled = true;
+            sendButton.disabled = true;
+            appendSystemMessage("Bağlantı kesintisi. Yeniden bağlanmaya çalışılıyor...");
+        });
+        
+        connection.onreconnected(() => {
+            connectionStatus.textContent = "Bağlandı";
+            connectionStatus.classList.remove("bg-warning");
+            connectionStatus.classList.add("bg-success");
+            messageInput.disabled = false;
+            sendButton.disabled = false;
+            appendSystemMessage("Bağlantı yeniden kuruldu.");
+            
+            // Odaya tekrar katıl
+            connection.invoke("JoinRoom", roomName, connectionId)
+                .catch(err => console.error(err));
+        });
+        
+        connection.onclose(() => {
+            connectionStatus.textContent = "Bağlantı Kesildi";
+            connectionStatus.classList.remove("bg-success", "bg-warning");
+            connectionStatus.classList.add("bg-danger");
+            messageInput.disabled = true;
+            sendButton.disabled = true;
+            appendSystemMessage("Sunucu bağlantısı kapandı.");
+        });
+        
+        // Event Listeners
+        sendButton.addEventListener("click", sendMessage);
+        
+        messageInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                sendMessage();
+            }
+        });
+        
+        // Sayfa yüklendiğinde sohbet mesajlarını temizle ve başlangıç mesajını ekle
+        window.onload = () => {
+            chatMessages.innerHTML = "";
+            appendSystemMessage("Sohbete hoş geldiniz! Bağlantı kuruluyor...");
+        };
+    </script>
+} 
